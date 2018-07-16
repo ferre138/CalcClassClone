@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ClassCalc</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <div id="mySidenav" class="sidenav">
+            <a class="logo"><img class="logo-img btn-round" src="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/01/8d/6a/018d6a5d-6fce-7689-6a3e-cdfd3a865d51/AppIcon-1x_U007emarketing-85-220-0-6.png/217x0w.jpg"><span class="logo-text">ClassCalc</span></a>
+            <a class="header" href="#">Settings</a>
+            <a class="item"href="#">Log in</a>
+            <a class="item"href="#">Sign up</a>
+            <a class="item"href="#">Join a Class</a>
+            <a class="item"href="#">About</a>
+            <a class="item"href="#">Contact</a>
+        </div>
+        <div id="calculator">
+            <div id="topnav">
+                <div class="nav-left">
+                    <img onclick="openNav()" class="btn-round" src="https://www.w3schools.com/howto/img_avatar.png">
+                    <span class="angle">Deg</span>
+                </div>
+                <div class="nav-center">
+                    <img class="arrow" src="https://png.icons8.com/metro/1600/undo.png">
+                    <img class="arrow" src="https://www.iconsdb.com/icons/preview/black/redo-3-xxl.png">
+                </div>
+                <div class="nav-right">
+                    <a class="nav-icon" href="#"><i class="fa fa-search"></i></a> 
+                    <a class="nav-icon" href="#"><i class="far fa-eye"></i></a> 
+                    <a class="nav-icon" href="#"><i class="fas fa-calculator"></i></i></a>
+                    <div class="calc-dropdown hide">
+                        <div class="drop-item">
+                            <img class="drop-icon" src="https://cdn4.iconfinder.com/data/icons/education-glyph-3/320/Mathematical_symbols_in_four_squares-512.png"/>
+                            <a class="drop-link">scientific</a>
+                        </div>
+                        <div class="drop-item">
+                            <img class="drop-icon" src="https://cdn1.iconfinder.com/data/icons/mathematics/66/84-512.png"/>
+                            <a class="drop-link">graphing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="display">
+                <div class="history">
+                    <div class="hist-row hide">
+                        <hr>
+                        <div class="history-left"></div><div class="history-right"></div>
+                    </div>
+                    <div class="hist-row hide">
+                        <hr>
+                        <div class="history-left"></div><div class="history-right"></div>
+                    </div>
+                    <div class="hist-row hide">
+                        <hr>
+                        <div class="history-left"></div><div class="history-right"></div>
+                    </div>
+                    <div class="hist-row hide">
+                        <hr>
+                        <div class="history-left"></div><div class="history-right"></div>
+                    </div>
+                    <div class="hist-row hide">
+                        <hr>
+                        <div class="history-left"></div><div class="history-right"></div>
+                    </div>
+                </div>
+                <div class="realtime">
+                    <hr id="divider">
+                    <div id="display-bottom">
+                        <div class="display-left"></div>
+                        <div class="display-right">
+                            <div class="display-row">
+                                <img id="backspace" class="display-icon" src="https://cdn.onlinewebfonts.com/svg/img_522338.png">
+                            </div>
+                            <div class="display-row">
+                                <img class="display-icon equal" src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Science-Equal-Sign-icon.png">
+                                <div class="temp-res-box"><span class="temp-res-val"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu">
+                <div class="col-5">
+                    <button class="menu-btn btn-round">TRIG</button>
+                </div>
+                <div class="col-5">
+                    <button class="menu-btn btn-round">ALG</button>
+                </div>
+                <div class="col-5">
+                    <button class="menu-btn btn-round menu-btn-center">
+                        <div>
+                            <i class="arrow up"></i>
+                        </div>
+                        <div class="arrow-right-left">
+                            <i class="arrow right"></i>
+                            <i class="arrow left"></i>
+                        </div>
+                        <div>
+                            <i class="arrow down"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-5">
+                    <button class="menu-btn btn-round">STAT</button>
+                </div>
+                <div class="col-5">
+                    <button class="menu-btn btn-round">CLCS</button>
+                </div>
+            </div>
+            <div id="keypad">
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><button class="btn-calc green-font">(</button></td>
+                        <td><button class="btn-calc green-font">)</button></td>
+                        <td><button class="op btn-calc green-font" data-action="exp">x<sup>n</sup></button></td>
+                        <td><button class="op btn-calc green-font" data-action="divide">&#247;</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn-calc">7</button></td>
+                        <td><button class="btn-calc">8</button></td>
+                        <td><button class="btn-calc">9</button></td>
+                        <td><button class="op btn-calc green-font" data-action="multiply">x</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn-calc">4</button></td>
+                        <td><button class="btn-calc">5</button></td>
+                        <td><button class="btn-calc">6</button></td>
+                        <td><button class="op btn-calc green-font" data-action="subtract">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn-calc">1</button></td>
+                        <td><button class="btn-calc">2</button></td>
+                        <td><button class="btn-calc">3</button></td>
+                        <td><button class="btn-calc green-font" data-action="add">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn-calc green-font" data-action="memoryReset">MR</button></td>
+                        <td><button class="btn-calc">0</button></td>
+                        <td><button class="btn-calc" data-action="decimal">.</button></td>
+                        <td><button class="btn-equal" data-action="calculate"><img id="return-img" src="https://cdn.iconscout.com/public/images/icon/free/png-256/return-enter-key-keyboard-3f90ec6b7f7f4ac8-256x256.png"></button></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="trig" class="no-display">
+                <div class="stripe">TRIG</div>
+                <div class="grid-container">
+                    <div class="grid-item">sin</div>
+                    <div class="grid-item vertical-border">cos</div>
+                    <div class="grid-item">tan</div>
+                    <div class="grid-item horizontal-border">csc</div>
+                    <div class="grid-item vertical-border horizontal-border">sec</div>
+                    <div class="grid-item horizontal-border">cot</div>
+                </div>
+                <div class="stripe">TRIG</div>
+                <div class="grid-container">
+                    <div class="grid-item">sin<sup>-1</sup></div>
+                    <div class="grid-item vertical-border">cos<sup>-1</sup></div>
+                    <div class="grid-item">tan<sup>-1</sup></div>
+                    <div class="grid-item horizontal-border">csc<sup>-1</sup></div>
+                    <div class="grid-item vertical-border horizontal-border">sec<sup>-1</sup></div>
+                    <div class="grid-item horizontal-border">cot<sup>-1</sup></div>
+                </div>
+                <div class="stripe">TRIG</div>
+                <div class="grid-container">
+                    <div class="grid-item">sinh</div>
+                    <div class="grid-item vertical-border">cosh</div>
+                    <div class="grid-item">tanh</div>
+                    <div class="grid-item horizontal-border">csch</div>
+                    <div class="grid-item vertical-border horizontal-border">sech</div>
+                    <div class="grid-item horizontal-border">coth</div>
+                </div>
+            </div>
+            <div id="backgroundOverlay"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="classcalc.js"></script>
+    <script>
+        // open the side navigation modal
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "400px";
+            document.getElementById("backgroundOverlay").style.display = "block";
+        }
+
+        // close the side navigation modal
+        function closeNav() {
+            document.getElementById("backgroundOverlay").style.display = "none";
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // click outside side nav to close it
+        document.onclick = function(e){
+            if(e.target.id === 'backgroundOverlay'){
+                closeNav();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
