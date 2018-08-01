@@ -11,7 +11,7 @@ var keys = document.querySelectorAll(".btn-calc"),
 	angleType = document.querySelector(".angle"),
 	calcIcon = document.querySelector(".fa-calculator"),
 	navDropdown = document.querySelector(".calc-dropdown"),
-	menuBtn = document.querySelectorAll(".menu-btn");
+	menuBtn = document.querySelectorAll(".wheel-button");
 
 // variable to control number of rows to display
 var rowCount = 0;

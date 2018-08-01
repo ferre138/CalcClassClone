@@ -4,8 +4,20 @@
 <head>
     <title>ClassCalc</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="wheelmenu.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="jquery.wheelmenu.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".wheel-button").wheelmenu({
+            trigger: "longpress",
+            animation: "fly",
+            animationSpeed: "fast"
+        });
+    });
+    </script>
 </head>
 
 <body>
@@ -27,7 +39,7 @@
                 </div>
                 <div class="nav-center">
                     <img class="arrow" src="https://png.icons8.com/metro/1600/undo.png">
-                    <img class="arrow" src="https://www.iconsdb.com/icons/preview/black/redo-3-xxl.png">
+                    <img class="arrow" src="https://png.icons8.com/metro/1600/redo.png">
                 </div>
                 <div class="nav-right">
                     <a class="nav-icon" href="#"><i class="fa fa-search"></i></a> 
@@ -85,13 +97,28 @@
                 </div>
             </div>
             <div id="menu">
-                <div class="col-5">
-                    <button class="menu-btn btn-round">TRIG</button>
-                </div>
-                <div class="col-5">
-                    <button class="menu-btn btn-round">ALG</button>
-                </div>
-                <div class="col-5">
+                    <a href="#wheel" class="wheel-button">TRIG</a>
+                    <ul id="wheel"  data-angle="[270, 485]">
+                        <li class="item"><a href="#home">sin(x)</a></li>
+                        <li class="item"><a href="#home">cos(x)</a></li>
+                        <li class="item"><a href="#home">tan(x)</a></li>
+                        <li class="item"><a href="#home">cot(x)</a></li>
+                        <li class="item"><a href="#home">sec(x)</a></li>
+                        <li class="item"><a href="#home">csc(x)</a></li>
+                    </ul>
+                    <a href="#wheel2" class="wheel-button">&nbsp;ALG&nbsp;</a>
+                    <ul id="wheel2"  data-angle="all">
+                        <li class="item"><a href="#home">A</a></li>
+                        <li class="item"><a href="#home">B</a></li>
+                        <li class="item"><a href="#home">C</a></li>
+                        <li class="item"><a href="#home">D</a></li>
+                        <li class="item"><a href="#home">E</a></li>
+                        <li class="item"><a href="#home">F</a></li>
+                        <li class="item"><a href="#home">&#8508;</a></li>
+                        <li class="item"><a href="#home">&radic;x&#772;</a></li>
+                        <li class="item"><a href="#home">I</a></li>
+                        <li class="item"><a href="#home">J</a></li>
+                    </ul>
                     <button class="menu-btn btn-round menu-btn-center">
                         <div>
                             <i class="arrow up"></i>
@@ -104,13 +131,28 @@
                             <i class="arrow down"></i>
                         </div>
                     </button>
-                </div>
-                <div class="col-5">
-                    <button class="menu-btn btn-round">STAT</button>
-                </div>
-                <div class="col-5">
-                    <button class="menu-btn btn-round">CLCS</button>
-                </div>
+                    <a href="#wheel3" class="wheel-button">STAT</a>
+                    <ul id="wheel3"  data-angle="all">
+                        <li class="item"><a href="#home">A</a></li>
+                        <li class="item"><a href="#home">B</a></li>
+                        <li class="item"><a href="#home">C</a></li>
+                        <li class="item"><a href="#home">D</a></li>
+                        <li class="item"><a href="#home">E</a></li>
+                        <li class="item"><a href="#home">F</a></li>
+                        <li class="item"><a href="#home">G</a></li>
+                        <li class="item"><a href="#home">H</a></li>
+                        <li class="item"><a href="#home">I</a></li>
+                        <li class="item"><a href="#home">J</a></li>
+                    </ul>
+                    <a href="#wheel4" class="wheel-button">CLCS</a>
+                    <ul id="wheel4"  data-angle="[90,305]">
+                        <li class="item"><a href="#home">A</a></li>
+                        <li class="item"><a href="#home">B</a></li>
+                        <li class="item"><a href="#home">C</a></li>
+                        <li class="item"><a href="#home">D</a></li>
+                        <li class="item"><a href="#home">E</a></li>
+                        <li class="item"><a href="#home">F</a></li>
+                    </ul>
             </div>
             <div id="keypad">
                 <table cellspacing="0" cellpadding="0">
@@ -198,6 +240,11 @@
                 closeNav();
             }
         }
+
+        //prevent long touch context menu
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    }, false);
     </script>
 
 </body>

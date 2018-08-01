@@ -13,6 +13,10 @@ button{
 	outline: none;
 }
 
+a{
+	text-decoration: none;
+}
+
 a:hover, img:hover, button:hover, i:hover{
 	cursor: pointer;
 }
@@ -53,7 +57,7 @@ td{
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    z-index: 1;
+    z-index: 7;
 }
 
 .sidenav a {
@@ -297,13 +301,55 @@ td{
 #menu{
 	height: 150px;
 	line-height: 150px;
-	display: block;
 	text-align: center;
 }
 
-.col-5{
-	display: inline-block;
-	width: 18%;
+/*#menu *{
+	border: .5px solid blue;
+}*/
+
+.wheel-button{
+	font-size: 25px;
+	padding: 40px 25px;
+	margin: 0 10px;
+	background-color: #EFEFEF;
+	border: none;
+	position: relative;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.wheel-button:active{
+	color: #22967F;
+}
+
+.wheel-button:visited{
+	color: #000;
+}
+
+.wheel-button:focus{
+	color: #22967F;
+}
+
+.wheel li{
+	width: 200px;
+	height: 200px;
+}
+
+.wheel li a, .wheel li a:visited{
+	background: #2ABC9F;
+	border-radius: 50%;
+	padding: 10px;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 12px;
+}
+
+.wheel li a:hover{
+	background: #22967F;
 }
 
 .menu-btn{
@@ -316,18 +362,17 @@ td{
 	vertical-align: middle;
 }
 
-.menu-btn:active, .active{
+.menu-btn:active{
 	background-color: #BBBBBB;
-	border: 1px solid grey;
 	color: #22967F;
 }
 
 .menu-btn-center{
-	background-color: #2ABC9F;
+	background-color: #22967F;
 }
 
 .menu-btn-center:active{
-	background-color: #22967F;
+	background-color: #176d5c;
 }
 
 i.arrow {
