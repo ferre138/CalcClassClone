@@ -121,7 +121,7 @@
 	
 	$.fn.showIcon = function (button, settings) {
 	  var el = this,
-	      zindex = '6';
+	      zindex = '7';
 	  if (settings.trigger == "hover") {
 	    var zindex = '3';
     }
@@ -133,7 +133,7 @@
     
 	  el.show().css({
         position: 'absolute',
-        'z-index': '7',
+        'z-index': '8',
         'padding': '30px' // add safe zone for mouseover
     }).centerAround(button); 
     el.addClass("wheel active").css("visibility", "visible").show();
@@ -150,7 +150,6 @@
       height = container.innerHeight(),
       angle =  0,
       step = (settings.angle[1] - settings.angle[0]) / fields.length;
-     
      
       switch (settings.animation) { 
         case 'fade': 
@@ -257,9 +256,16 @@
     settings = predefineSpeed(settings);
     
     return this.each(function(){
-      var button = $(this)
+      var button = $(this);
       var el = $($(this).attr("href"));
+      var fields = el.find(".item");
+      var radialWheel = $('ul[href="' + button.attr("href") + '"]');
+      var shadows = radialWheel.find(".radial");
       el.addClass("wheel");
+      // console.log(el);
+      // console.log(fields);
+      // console.log(shadows);
+      // console.log(radialWheel);
       
       button.css("opacity", 0).animate({
         opacity: 1
@@ -281,9 +287,28 @@
       } else if(settings.trigger == "longpress"){
         
         button.bind({
-          touchstart: function() {
+          mousedown: function() {
             timer = setTimeout(function(){
               el.showIcon(button, settings);
+
+              var anchors = fields.find("a");
+              anchors.each(function(){
+                var index = anchors.index(this);
+                $(this).bind("mouseenter", function(){
+                  shadows.filter(':eq("'+index+'")').show();
+                  this.unbind();
+                });
+                $(this).bind("mouseleave", function(){
+                  var index = anchors.index(this);
+                  shadows.filter(':eq("'+index+'")').hide();
+                  this.unbind();
+                });
+                $(this).bind("mouseup", function(){
+                  var index = anchors.index(this);
+                  $(".display-left").append(anchors.filter(':eq("'+index+'")').text());
+                  this.unbind();
+                });
+              });              
               console.log("LONG TOUCH");
             }, touchduration);
             $("html").css({"overflow":"hidden"});
@@ -291,8 +316,8 @@
           }
         });
 
-        button.bind({
-          touchend: function() {
+        $("body").bind({
+          mouseup: function() {
             //stops short touches from firing the event
             if (timer)
                 clearTimeout(timer); // clearTimeout, not cleartimeout..
@@ -304,11 +329,11 @@
 
       } else {
         button.click( function() {
-          // if (el.css('visibility') == "visible") {
-          //   el.hideIcon(button, settings);
-          // } else {
-          //   el.showIcon(button, settings);
-          // }
+          if (el.css('visibility') == "visible") {
+            el.hideIcon(button, settings);
+          } else {
+            el.showIcon(button, settings);
+          }
         });
       }
     });

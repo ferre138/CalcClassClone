@@ -97,7 +97,17 @@
                 </div>
             </div>
             <div id="menu">
-                    <a href="#wheel" class="wheel-button">TRIG</a>
+                    <div class="col-5">
+                        <ul href="#wheel">
+                            <li class="radial east"></li>
+                            <li class="radial east"></li>
+                            <li class="radial east"></li>
+                            <li class="radial east"></li>
+                            <li class="radial east"></li>
+                            <li class="radial east"></li>
+                        </ul>
+                        <a href="#wheel" class="wheel-button">TRIG</a>
+                    </div>
                     <ul id="wheel"  data-angle="[270, 485]">
                         <li class="item"><a href="#home">sin(x)</a></li>
                         <li class="item"><a href="#home">cos(x)</a></li>
@@ -106,7 +116,22 @@
                         <li class="item"><a href="#home">sec(x)</a></li>
                         <li class="item"><a href="#home">csc(x)</a></li>
                     </ul>
-                    <a href="#wheel2" class="wheel-button">&nbsp;ALG&nbsp;</a>
+
+                    <div class="col-5">
+                        <ul href="#wheel2">
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                        </ul>
+                        <a href="#wheel2" class="wheel-button">&nbsp;ALG&nbsp;</a>
+                    </div>
                     <ul id="wheel2"  data-angle="all">
                         <li class="item"><a href="#home">A</a></li>
                         <li class="item"><a href="#home">B</a></li>
@@ -119,19 +144,36 @@
                         <li class="item"><a href="#home">I</a></li>
                         <li class="item"><a href="#home">J</a></li>
                     </ul>
-                    <button class="menu-btn btn-round menu-btn-center">
-                        <div>
-                            <i class="arrow up"></i>
-                        </div>
-                        <div class="arrow-right-left">
-                            <i class="arrow right"></i>
-                            <i class="arrow left"></i>
-                        </div>
-                        <div>
-                            <i class="arrow down"></i>
-                        </div>
-                    </button>
-                    <a href="#wheel3" class="wheel-button">STAT</a>
+
+                    <div class="col-5">
+                        <button class="menu-btn btn-round menu-btn-center">
+                            <div>
+                                <i class="arrow up"></i>
+                            </div>
+                            <div class="arrow-right-left">
+                                <i class="arrow right"></i>
+                                <i class="arrow left"></i>
+                            </div>
+                            <div>
+                                <i class="arrow down"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-5">
+                        <ul href="#wheel3">
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                            <li class="radial center"></li>
+                        </ul>
+                        <a href="#wheel3" class="wheel-button">STAT</a>
+                    </div>
                     <ul id="wheel3"  data-angle="all">
                         <li class="item"><a href="#home">A</a></li>
                         <li class="item"><a href="#home">B</a></li>
@@ -144,7 +186,17 @@
                         <li class="item"><a href="#home">I</a></li>
                         <li class="item"><a href="#home">J</a></li>
                     </ul>
-                    <a href="#wheel4" class="wheel-button">CLCS</a>
+                    <div class="col-5">
+                        <ul href="#wheel4">
+                            <li class="radial west"></li>
+                            <li class="radial west"></li>
+                            <li class="radial west"></li>
+                            <li class="radial west"></li>
+                            <li class="radial west"></li>
+                            <li class="radial west"></li>
+                        </ul>
+                        <a href="#wheel4" class="wheel-button">CLCS</a>
+                    </div>
                     <ul id="wheel4"  data-angle="[90,305]">
                         <li class="item"><a href="#home">A</a></li>
                         <li class="item"><a href="#home">B</a></li>
@@ -242,9 +294,9 @@
         }
 
         //prevent long touch context menu
-        document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-    }, false);
+    //     document.addEventListener("contextmenu", function (e) {
+    //     e.preventDefault();
+    // }, false);
     </script>
 
 </body>
